@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "thisvid-down",
+	"description": "thisvid 비디오 다운로더",
+	"version": "1.0",
+	"icons": {
+		"128": "128.png"
+	},
+	"permissions": [
+		"storage",
+		"downloads",
+		"https://thisvid.com/videos/*"
+	],
+	"content_scripts": [
+		{
+			"matches": [ "https://thisvid.com/videos/*" ],
+			"js": [ "content.js" ]
+		}
+	],
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": false
+	}
+}
