@@ -2,7 +2,7 @@ const fillZero = n => n.toString().padStart(2, '0')
 
 chrome.runtime.onMessage.addListener(({ content }, _, sendResponse) => {
 	if (content !== 'download-start') return
-	const id = document.querySelector('meta[property="og:url"]').getAttribute('content').match(/\/([\w-]+)\/$/)[1]
+	const id = document.querySelector('meta[property="og:url"]').getAttribute('content').match(/videos\/([\w-]+)\/$/)[1]
 	const name = document.querySelector('.headline').children[0].innerHTML
 	const now = new Date()
 	const date = `${now.getFullYear()}${fillZero(now.getMonth() + 1)}${fillZero(now.getDate())}_${fillZero(now.getHours())}${fillZero(now.getMinutes())}${fillZero(now.getSeconds())}`
